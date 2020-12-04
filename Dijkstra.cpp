@@ -48,6 +48,10 @@ void dijkstra(int start) {
         int v = pq.top().second;
         pq.pop();
 
+        if(dist[v] < currentDistance) {
+            continue;
+        }
+
         for(i = 0; i < adjacencyList[v].size(); i++) {
             int destination = adjacencyList[v][i].first;
             int w = adjacencyList[v][i].second;
